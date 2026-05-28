@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>طلب الأساور - ORZI 1998</title>
+    <meta name="description" content="اطلب قطعتك المميزة من تشكيلة ORZI Heritage Bracelets" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Amiri', serif;
+        background: linear-gradient(160deg, #f5f0e8 0%, #e7ddcc 40%, #f0ebe0 100%);
+        min-height: 100vh;
+        color: #243247;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      header {
+        background: rgba(36, 50, 71, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: 'Cinzel', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #e7ddcc;
+        letter-spacing: 0.1em;
+      }
+
+      .back-button {
+        background: transparent;
+        border: 1px solid #e7ddcc;
+        color: #e7ddcc;
+        padding: 10px 24px;
+        font-family: 'Amiri', serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .back-button:hover {
+        background: #e7ddcc;
+        color: #243247;
+        transform: translateY(-2px);
+      }
+
+      .hero-section {
+        padding: 80px 0 60px;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-family: 'Amiri', serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #243247;
+        margin-bottom: 24px;
+        line-height: 1.4;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+        color: #243247;
+        opacity: 0.75;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .divider {
+        width: 60px;
+        height: 2px;
+        background: #243247;
+        opacity: 0.3;
+        margin: 40px auto;
+      }
+
+      .form-container {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(36, 50, 71, 0.1);
+        border-radius: 16px;
+        padding: 48px;
+        margin: 0 auto 80px;
+        max-width: 900px;
+        box-shadow: 0 8px 32px rgba(36, 50, 71, 0.08);
+      }
+
+      .section-title {
+        font-family: 'Amiri', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #243247;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        color: #243247;
+        margin-bottom: 8px;
+        opacity: 0.85;
+      }
+
+      .required {
+        color: #c44;
+        margin-right: 4px;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid rgba(36, 50, 71, 0.2);
+        border-radius: 8px;
+        font-family: 'Amiri', serif;
+        font-size: 16px;
+        color: #243247;
+        background: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: #243247;
+        box-shadow: 0 0 0 3px rgba(36, 50, 71, 0.1);
+        background: #ffffff;
+      }
+
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: rgba(36, 50, 71, 0.4);
+      }
+
+      .form-select {
+        cursor: pointer;
+      }
+
+      .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .error-message {
+        color: #c44;
+        font-size: 14px;
+        margin-top: 6px;
+      }
+
+      .bracelets-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+
+      .bracelet-card {
+        background: rgba(255, 255, 255, 0.6);
+        border: 2px solid rgba(36, 50, 71, 0.15);
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .bracelet-card:hover {
+        border-color: rgba(36, 50, 71, 0.4);
+        background: rgba(255, 255, 255, 0.8);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(36, 50, 71, 0.12);
+      }
+
+      .bracelet-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 16px;
+      }
+
+      .bracelet-name {
+        font-family: 'Cinzel', serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #243247;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .bracelet-label {
+        font-size: 13px;
+        color: #243247;
+        opacity: 0.6;
+        text-align: center;
+        margin-bottom: 16px;
+        min-height: 20px;
+      }
+
+      .quantity-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .quantity-label {
+        font-size: 14px;
+        color: #243247;
+        opacity: 0.75;
+      }
+
+      .quantity-input {
+        width: 70px;
+        padding: 8px 12px;
+        text-align: center;
+        border: 1px solid rgba(36, 50, 71, 0.2);
+        border-radius: 6px;
+        font-family: 'Amiri', serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #243247;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .quantity-input:focus {
+        outline: none;
+        border-color: #243247;
+        background: #ffffff;
+      }
+
+      .trust-section {
+        margin-top: 48px;
+        padding-top: 32px;
+        border-top: 1px solid rgba(36, 50, 71, 0.1);
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 32px;
+        margin-top: 24px;
+      }
+
+      .trust-item {
+        text-align: center;
+      }
+
+      .trust-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(36, 50, 71, 0.05);
+      }
+
+      .trust-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: #243247;
+        opacity: 0.6;
+      }
+
+      .trust-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #243247;
+        margin-bottom: 8px;
+        opacity: 0.85;
+      }
+
+      .trust-description {
+        font-size: 14px;
+        color: #243247;
+        opacity: 0.6;
+        line-height: 1.6;
+      }
+
+      .reassurance-text {
+        text-align: center;
+        font-size: 15px;
+        color: #243247;
+        opacity: 0.7;
+        line-height: 1.8;
+        margin-top: 32px;
+        padding: 24px;
+        background: rgba(36, 50, 71, 0.03);
+        border-radius: 8px;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 16px 32px;
+        background: #243247;
+        color: #e7ddcc;
+        border: none;
+        border-radius: 10px;
+        font-family: 'Amiri', serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 24px;
+      }
+
+      .submit-button:hover:not(:disabled) {
+        background: #1a2b3c;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(36, 50, 71, 0.25);
+      }
+
+      .submit-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .payment-note {
+        text-align: center;
+        font-size: 14px;
+        color: #243247;
+        opacity: 0.6;
+        margin-top: 16px;
+      }
+
+      .closing-section {
+        margin-top: 60px;
+        padding: 48px 0;
+        text-align: center;
+        border-top: 1px solid rgba(36, 50, 71, 0.08);
+      }
+
+      .closing-logo {
+        font-family: 'Cinzel', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #243247;
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+      }
+
+      .closing-tagline {
+        font-family: 'Amiri', serif;
+        font-size: 16px;
+        color: #243247;
+        opacity: 0.5;
+        letter-spacing: 0.05em;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: white;
+        border-radius: 16px;
+        padding: 48px;
+        max-width: 480px;
+        width: 100%;
+        text-align: center;
+        animation: modalFadeIn 0.3s ease;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .success-icon {
+        width: 64px;
+        height: 64px;
+        background: #d4edda;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+      }
+
+      .success-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke: #155724;
+      }
+
+      .modal-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #243247;
+        margin-bottom: 12px;
+      }
+
+      .modal-text {
+        font-size: 18px;
+        color: #243247;
+        opacity: 0.75;
+        margin-bottom: 32px;
+      }
+
+      .modal-button {
+        background: #243247;
+        color: #e7ddcc;
+        border: none;
+        padding: 12px 32px;
+        border-radius: 8px;
+        font-family: 'Amiri', serif;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .modal-button:hover {
+        background: #1a2b3c;
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          padding: 32px 24px;
+        }
+
+        .hero-title {
+          font-size: 36px;
+        }
+
+        .hero-subtitle {
+          font-size: 18px;
+        }
+
+        .bracelets-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-content {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .trust-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .closing-logo {
+          font-size: 24px;
+        }
+      }
+    </style>
+      <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '2204816053376578');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <h1 class="logo">ORZI 1998</h1>
+          <a href="/" class="back-button">العودة للموقع ←</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <h2 class="hero-title">اطلب قطعتك من ORZI</h2>
+          <p class="hero-subtitle">
+            اختر تصميمك المفضل ودعنا نصنع لك قطعة تعبّر عن هويتك.
+          </p>
+          <div class="divider"></div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="form-container">
+          <h3 class="section-title">اختر التصميم والكمية</h3>
+
+          <form id="orderForm">
+            <div class="bracelets-grid">
+              <div class="bracelet-card">
+                <img src="/aura.jpg" alt="AURA" class="bracelet-image" />
+                <h4 class="bracelet-name">AURA</h4>
+                <p class="bracelet-label">تصميم مستقيم</p>
+                <div class="quantity-control">
+                  <label for="auraQty" class="quantity-label">الكمية:</label>
+                  <input
+                    type="number"
+                    id="auraQty"
+                    name="auraQty"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="quantity-input"
+                  />
+                </div>
+              </div>
+
+              <div class="bracelet-card">
+                <img src="/harmonia.jpg" alt="HARMONIA" class="bracelet-image" />
+                <h4 class="bracelet-name">HARMONIA</h4>
+                <p class="bracelet-label">تصميم منحني</p>
+                <div class="quantity-control">
+                  <label for="harmoniaQty" class="quantity-label">الكمية:</label>
+                  <input
+                    type="number"
+                    id="harmoniaQty"
+                    name="harmoniaQty"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="quantity-input"
+                  />
+                </div>
+              </div>
+
+              <div class="bracelet-card">
+                <img src="/sophia.jpg" alt="SOPHIA" class="bracelet-image" />
+                <h4 class="bracelet-name">SOPHIA</h4>
+                <p class="bracelet-label">حصري للنساء</p>
+                <div class="quantity-control">
+                  <label for="sophiaQty" class="quantity-label">الكمية:</label>
+                  <input
+                    type="number"
+                    id="sophiaQty"
+                    name="sophiaQty"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="quantity-input"
+                  />
+                </div>
+              </div>
+
+              <div class="bracelet-card">
+                <img src="/kairo.jpg" alt="KAÏRO" class="bracelet-image" />
+                <h4 class="bracelet-name">KAÏRO</h4>
+                <p class="bracelet-label">تصميم مميز</p>
+                <div class="quantity-control">
+                  <label for="kairoQty" class="quantity-label">الكمية:</label>
+                  <input
+                    type="number"
+                    id="kairoQty"
+                    name="kairoQty"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="quantity-input"
+                  />
+                </div>
+              </div>
+
+              <div class="bracelet-card">
+                <img src="/aurelia.jpg" alt="AURELIA" class="bracelet-image" />
+                <h4 class="bracelet-name">AURELIA</h4>
+                <p class="bracelet-label">تصميم راقي</p>
+                <div class="quantity-control">
+                  <label for="aureliaQty" class="quantity-label">الكمية:</label>
+                  <input
+                    type="number"
+                    id="aureliaQty"
+                    name="aureliaQty"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="quantity-input"
+                  />
+                </div>
+              </div>
+
+              <div class="bracelet-card">
+                <img src="/solea.jpg" alt="SOLÉA" class="bracelet-image" />
+                <h4 class="bracelet-name">SOLÉA</h4>
+                <p class="bracelet-label">تصميم أنثوي</p>
+                <div class="quantity-control">
+                  <label for="soleaQty" class="quantity-label">الكمية:</label>
+                  <input
+                    type="number"
+                    id="soleaQty"
+                    name="soleaQty"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="quantity-input"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 class="section-title">معلومات التوصيل</h3>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span class="required">*</span>
+                الاسم
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="أدخل اسمك الكامل"
+                required
+              />
+              <div id="nameError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span class="required">*</span>
+                رقم الهاتف
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="01xxxxxxxxx"
+                required
+              />
+              <div id="phoneError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                رقم هاتف بديل
+              </label>
+              <input
+                type="tel"
+                id="altPhone"
+                name="altPhone"
+                class="form-input"
+                placeholder="01xxxxxxxxx"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span class="required">*</span>
+                المحافظة
+              </label>
+              <select id="governorate" name="governorate" class="form-select" required>
+                <option value="">اختر المحافظة</option>
+                <option value="القاهرة">القاهرة</option>
+                <option value="الجيزة">الجيزة</option>
+                <option value="الإسكندرية">الإسكندرية</option>
+                <option value="القليوبية">القليوبية</option>
+                <option value="الدقهلية">الدقهلية</option>
+                <option value="الغربية">الغربية</option>
+                <option value="البحيرة">البحيرة</option>
+                <option value="دمياط">دمياط</option>
+                <option value="بورسعيد">بورسعيد</option>
+                <option value="السويس">السويس</option>
+                <option value="الإسماعيلية">الإسماعيلية</option>
+                <option value="قنا">قنا</option>
+                <option value="الأقصر">الأقصر</option>
+                <option value="البحر الأحمر">البحر الأحمر</option>
+                <option value="مطروح">مطروح</option>
+              </select>
+              <div id="governorateError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span class="required">*</span>
+                المنطقة
+              </label>
+              <select id="area" name="area" class="form-select" required disabled>
+                <option value="">اختر المنطقة</option>
+              </select>
+              <div id="areaError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span class="required">*</span>
+                العنوان
+              </label>
+              <input
+                type="text"
+                id="street"
+                name="street"
+                class="form-input"
+                placeholder="المنطقة / إسم الشارع"
+                required
+              />
+              <div id="streetError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span class="required">*</span>
+                رقم المبنى
+              </label>
+              <input
+                type="text"
+                id="building"
+                name="building"
+                class="form-input"
+                placeholder="أدخل رقم المبنى"
+                required
+              />
+              <div id="buildingError" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                الدور
+              </label>
+              <input
+                type="text"
+                id="floor"
+                name="floor"
+                class="form-input"
+                placeholder="أدخل رقم الدور (اختياري)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                معالم قريبة
+              </label>
+              <input
+                type="text"
+                id="landmarks"
+                name="landmarks"
+                class="form-input"
+                placeholder="أدخل معالم قريبة (اختياري)"
+              />
+            </div>
+
+            <div class="trust-section">
+              <div class="trust-grid">
+                <div class="trust-item">
+                  <div class="trust-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                  </div>
+                  <h4 class="trust-title">استبدال خلال 14 يوم</h4>
+                  <p class="trust-description">
+                    يمكنك استبدال المنتج خلال 14 يوم من تاريخ الاستلام إذا لم يكن مناسباً لك.
+                  </p>
+                </div>
+
+                <div class="trust-item">
+                  <div class="trust-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h4 class="trust-title">توصيل سريع</h4>
+                  <p class="trust-description">
+                    يتم تجهيز الطلب وشحنه خلال 3 إلى 5 أيام عمل.
+                  </p>
+                </div>
+
+                <div class="trust-item">
+                  <div class="trust-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
+                  </div>
+                  <h4 class="trust-title">تغليف أنيق</h4>
+                  <p class="trust-description">
+                    كل قطعة من ORZI تأتي بتغليف أنيق يليق بقيمتها.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reassurance-text">
+              طلبك يتم تأكيده مباشرة بعد إرسال النموذج،<br>
+              وسيقوم فريق ORZI بالتواصل معك لتأكيد التفاصيل.
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-button">
+              أكمل طلبك الآن
+            </button>
+
+            <p class="payment-note">
+              الدفع عند الاستلام متاح داخل مصر.
+            </p>
+          </form>
+
+          <div class="closing-section">
+            <h2 class="closing-logo">ORZI</h2>
+            <p class="closing-tagline">خالد. راقٍ. أصيل.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <div class="success-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="modal-title">تم استلام طلبك</h3>
+        <p class="modal-text">سنتواصل معك خلال ٢٤ ساعة</p>
+        <button class="modal-button" onclick="closeModal()">شكراً</button>
+      </div>
+    </div>
+
+    <script>
+      const governorates = {
+        'القاهرة': ['المعادي', 'التجمع الخامس', 'مدينة نصر', 'مصر الجديدة', 'وسط البلد', 'شبرا', 'عين شمس', 'الزمالك', 'جاردن سيتي', 'حلوان'],
+        'الجيزة': ['الدقي', 'المهندسين', 'الهرم', 'فيصل', 'أكتوبر', 'الشيخ زايد', 'المنيل', 'العجوزة', 'إمبابة'],
+        'الإسكندرية': ['سموحة', 'محرم بك', 'سيدي جابر', 'المنتزة', 'العجمي', 'ميامي', 'لوران', 'كفر عبده'],
+        'القليوبية': ['بنها', 'شبرا الخيمة', 'العبور', 'الخانكة', 'قليوب'],
+        'الدقهلية': ['المنصورة', 'طلخا', 'ميت غمر', 'السنبلاوين'],
+        'الغربية': ['طنطا', 'المحلة الكبرى', 'كفر الزيات', 'زفتى'],
+        'البحيرة': ['دمنهور', 'كفر الدوار', 'إيتاي البارود', 'رشيد'],
+        'دمياط': ['دمياط', 'دمياط الجديدة', 'رأس البر'],
+        'بورسعيد': ['حي الشرق', 'حي العرب', 'بورفؤاد'],
+        'الإسماعيلية': ['الإسماعيلية', 'القصاصين', 'أبو صوير'],
+        'السويس': ['حي السويس', 'الأربعين', 'بورتوفيق'],
+        'قنا': ['قنا', 'نجع حمادي', 'قوص'],
+        'الأقصر': ['الأقصر', 'القرنة', 'إسنا'],
+        'البحر الأحمر': ['الغردقة', 'سفاجا', 'مرسى علم'],
+        'مطروح': ['مرسى مطروح', 'الساحل الشمالي'],
+      };
+
+      const governorateSelect = document.getElementById('governorate');
+      const areaSelect = document.getElementById('area');
+      const form = document.getElementById('orderForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const modal = document.getElementById('successModal');
+
+      governorateSelect.addEventListener('change', function() {
+        const selectedGov = this.value;
+        areaSelect.innerHTML = '<option value="">اختر المنطقة</option>';
+
+        if (selectedGov && governorates[selectedGov]) {
+          areaSelect.disabled = false;
+          governorates[selectedGov].forEach(area => {
+            const option = document.createElement('option');
+            option.value = area;
+            option.textContent = area;
+            areaSelect.appendChild(option);
+          });
+        } else {
+          areaSelect.disabled = true;
+        }
+
+        clearError('governorateError');
+      });
+
+      function clearError(errorId) {
+        document.getElementById(errorId).textContent = '';
+      }
+
+      function showError(errorId, message) {
+        document.getElementById(errorId).textContent = message;
+      }
+
+      function validateForm() {
+        let isValid = true;
+
+        document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+        const name = document.getElementById('name').value.trim();
+        if (!name) {
+          showError('nameError', 'الاسم مطلوب');
+          isValid = false;
+        }
+
+        const phone = document.getElementById('phone').value.trim();
+        if (!phone) {
+          showError('phoneError', 'رقم الهاتف مطلوب');
+          isValid = false;
+        } else if (!/^01\d{9}$/.test(phone)) {
+          showError('phoneError', 'رقم الهاتف يجب أن يكون 11 رقم ويبدأ بـ 01');
+          isValid = false;
+        }
+
+        const governorate = document.getElementById('governorate').value;
+        if (!governorate) {
+          showError('governorateError', 'المحافظة مطلوبة');
+          isValid = false;
+        }
+
+        const area = document.getElementById('area').value;
+        if (!area) {
+          showError('areaError', 'المنطقة مطلوبة');
+          isValid = false;
+        }
+
+        const street = document.getElementById('street').value.trim();
+        if (!street) {
+          showError('streetError', 'اسم الشارع مطلوب');
+          isValid = false;
+        }
+
+        const building = document.getElementById('building').value.trim();
+        if (!building) {
+          showError('buildingError', 'رقم المبنى مطلوب');
+          isValid = false;
+        }
+
+        const auraQty = parseInt(document.getElementById('auraQty').value) || 0;
+        const harmoniaQty = parseInt(document.getElementById('harmoniaQty').value) || 0;
+        const sophiaQty = parseInt(document.getElementById('sophiaQty').value) || 0;
+        const kairoQty = parseInt(document.getElementById('kairoQty').value) || 0;
+        const aureliaQty = parseInt(document.getElementById('aureliaQty').value) || 0;
+        const soleaQty = parseInt(document.getElementById('soleaQty').value) || 0;
+
+        if (auraQty === 0 && harmoniaQty === 0 && sophiaQty === 0 && kairoQty === 0 && aureliaQty === 0 && soleaQty === 0) {
+          showError('addressError', 'اختر كمية من منتج واحد على الأقل');
+          isValid = false;
+        }
+
+        return isValid;
+      }
+
+      let lastSubmitTime = 0;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const now = Date.now();
+        if (now - lastSubmitTime < 1000) {
+          return;
+        }
+        lastSubmitTime = now;
+
+        if (!validateForm()) {
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'جاري الإرسال...';
+
+        const auraQty = parseInt(document.getElementById('auraQty').value) || 0;
+        const harmoniaQty = parseInt(document.getElementById('harmoniaQty').value) || 0;
+        const sophiaQty = parseInt(document.getElementById('sophiaQty').value) || 0;
+        const kairoQty = parseInt(document.getElementById('kairoQty').value) || 0;
+        const aureliaQty = parseInt(document.getElementById('aureliaQty').value) || 0;
+        const soleaQty = parseInt(document.getElementById('soleaQty').value) || 0;
+
+        const formData = {
+          name: document.getElementById('name').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          altPhone: document.getElementById('altPhone').value.trim(),
+          governorate: document.getElementById('governorate').value,
+          area: document.getElementById('area').value,
+          street: document.getElementById('street').value.trim(),
+          building: document.getElementById('building').value.trim(),
+          floor: document.getElementById('floor').value.trim(),
+          landmarks: document.getElementById('landmarks').value.trim(),
+          auraQty: auraQty,
+          harmoniaQty: harmoniaQty,
+          sophiaQty: sophiaQty,
+          kairoQty: kairoQty,
+          aureliaQty: aureliaQty,
+          soleaQty: soleaQty,
+          totalPrice: (auraQty + harmoniaQty + sophiaQty + kairoQty + aureliaQty + soleaQty) * 460,
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHJvE27r492ytRwVREmcWP5ngJJzSeSeGl-1w56cxjj1RscFZT-27sGIdm6rv01L7q/exec';
+
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+const finalPrice = (parseInt(document.getElementById('auraQty').value) || 0) * 460 +
+                   (parseInt(document.getElementById('harmoniaQty').value) || 0) * 460 +
+                   (parseInt(document.getElementById('sophiaQty').value) || 0) * 460 +
+                   (parseInt(document.getElementById('kairoQty').value) || 0) * 460 +
+                   (parseInt(document.getElementById('aureliaQty').value) || 0) * 460 +
+                   (parseInt(document.getElementById('soleaQty').value) || 0) * 460;
+fbq('track', 'Purchase', {
+  value: finalPrice,
+  currency: 'EGP',
+  content_name: 'ORZI Heritage Bracelets',
+  num_items: (parseInt(document.getElementById('auraQty').value) || 0) +
+             (parseInt(document.getElementById('harmoniaQty').value) || 0) +
+             (parseInt(document.getElementById('sophiaQty').value) || 0) +
+             (parseInt(document.getElementById('kairoQty').value) || 0) +
+             (parseInt(document.getElementById('aureliaQty').value) || 0) +
+             (parseInt(document.getElementById('soleaQty').value) || 0)
+});
+          modal.classList.add('active');
+          form.reset();
+          areaSelect.disabled = true;
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          modal.classList.add('active');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'أكمل طلبك الآن';
+        }
+      });
+
+      function closeModal() {
+        modal.classList.remove('active');
+      }
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      ['name', 'phone', 'area', 'street', 'building', 'floor', 'landmarks'].forEach(fieldId => {
+        document.getElementById(fieldId).addEventListener('input', function() {
+          clearError(fieldId + 'Error');
+        });
+      });
+
+      areaSelect.addEventListener('change', function() {
+        clearError('areaError');
+      });
+    </script>
+  </body>
+</html>
